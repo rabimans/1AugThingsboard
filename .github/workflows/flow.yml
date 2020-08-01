@@ -38,8 +38,7 @@ jobs:
             username: ${{ secrets.USERNAME }}
             key: ${{ secrets.KEY }}
             port: ${{ secrets.PORT }}
-              script:|
-                dpkg -i /home/rabi/application/target/thingsboard.deb
+            script: dpkg -i /home/rabi/application/target/thingsboard.deb
                 
 
     
