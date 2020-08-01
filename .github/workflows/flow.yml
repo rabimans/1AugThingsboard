@@ -29,7 +29,7 @@ jobs:
         source: "."
         target: "/home/rabi"
     - uses: appleboy/ssh-action@master
-        script: |
+        script:|
           sudo dpkg -i /home/rabi/application/target/thingsboard.deb
           service thingsboard start
 
