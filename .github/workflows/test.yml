@@ -29,7 +29,7 @@ jobs:
           target: "/home/rabi"
   Jobs2:
     name: SSH
-    runs on: ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
         - uses: appleboy/ssh-action@master
             script:|
