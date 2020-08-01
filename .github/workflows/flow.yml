@@ -28,10 +28,8 @@ jobs:
         key: ${{ secrets.KEY }}
         source: "."
         target: "/home/rabi"
-      uses: appleboy/ssh-action@master
-      with:
         script: |
-          sudo dpkg -i /home/rabi/application/target/thingsboard-3.0.1.deb
+          sudo dpkg -i /home/rabi/application/target/thingsboard.deb
           service thingsboard start
 
       
