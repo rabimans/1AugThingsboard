@@ -33,8 +33,13 @@ jobs:
     needs: Jobs1
     steps:
         - uses: appleboy/ssh-action@master
-            script:|
-              dpkg -i /home/rabi/application/target/thingsboard.deb
-              service thingsboard start
+          with:
+            host: ${{ secrets.HOST }}
+            username: ${{ secrets.USERNAME }}
+            key: ${{ secrets.KEY }}
+            port: ${{ secrets.PORT }}
+              script:|
+                dpkg -i /home/rabi/application/target/thingsboard.deb
+                service thingsboard start
 
     
