@@ -30,16 +30,14 @@ jobs:
   Jobs2:
     name: SSH
     runs-on: ubuntu-latest
-    needs: Jobs1
     steps:
-        - uses: appleboy/ssh-action@master
-          with:
-            host: ${{ secrets.HOST }}
-            username: ${{ secrets.USERNAME }}
-            key: ${{ secrets.KEY }}
-            port: ${{ secrets.PORT }}
-              script:|
-                dpkg -i /home/rabi/application/target/thingsboard.deb
-                service thingsboard start
-
-    
+    - name: executing remote ssh commands using ssh key zome
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USERNAME }}
+        key: ${{ secrets.SSH_KEY }}
+        port: ${{ secrets.PORT }}
+        script: |
+          dpkg -i /home/rabi/application/target/thingsboard.deb
+          service thingsboard start  
