@@ -40,4 +40,5 @@ jobs:
         port: ${{ secrets.PORT }}
         script: |
           dpkg -i /home/rabi/application/target/thingsboard.deb
-          service thingsboard start  
+          service thingsboard start        
+         
